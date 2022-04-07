@@ -12,4 +12,8 @@ const app = express();
 app.use(express.json());
 app.use(`/${secretPath}`, webhookCallback(bot, "express"));
 
+app.get("/", (_, res) => {
+  res.send("Hi :)");
+});
+
 export { app };
